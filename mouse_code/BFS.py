@@ -2,18 +2,6 @@ import queue
 
 def createMaze():
     maze = []
-    maze.append(["#","#", "#", "#", "#", "O","#"])
-    maze.append(["#"," ", " ", " ", "#", " ","#"])
-    maze.append(["#"," ", "#", " ", "#", " ","#"])
-    maze.append(["#"," ", "#", " ", " ", " ","#"])
-    maze.append(["#"," ", "#", "#", "#", " ","#"])
-    maze.append(["#"," ", " ", " ", "#", " ","#"])
-    maze.append(["#","#", "#", "#", "#", "X","#"])
-
-    return maze
-
-def createMaze2():
-    maze = []
     maze.append(["#","#", "#", "#", "#", "O", "#", "#", "#"])
     maze.append(["#"," ", " ", " ", " ", " ", " ", " ", "#"])
     maze.append(["#"," ", "#", "#", " ", "#", "#", " ", "#"])
@@ -120,7 +108,7 @@ def findEnd(maze, moves):
 nums = queue.Queue()
 nums.put("")
 add = ""
-maze  = createMaze2()
+maze  = createMaze()
 
 while not findEnd(maze, add): 
     add = nums.get()
