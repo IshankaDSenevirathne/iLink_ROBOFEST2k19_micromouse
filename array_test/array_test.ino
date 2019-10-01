@@ -88,6 +88,17 @@ x = 29;
 Serial.print("\n");
 Serial.print("\n");
 }
+void writeData(unsigned int eaddress, byte data)
+{
+  Wire.beginTransmission(eeprom_address);
+  // set the pointer position
+  Wire.write((int)(eaddress >> 8));
+  Wire.write((int)(eaddress & 0xFF));
+  Wire.write(data);
+  Wire.endTransmission();
+  delay(10);
+}
+ 
 void PrintFFA()
 {
 //=====Print-out the FFA=====
@@ -114,6 +125,8 @@ Serial.print("\n");
 }
 void setup() {
   Serial.begin(9600);
+  Serial.println("Init");
+  
   PrintMaze();
 }
 
